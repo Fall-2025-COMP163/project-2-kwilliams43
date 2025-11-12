@@ -61,9 +61,10 @@ class Character:
     
     def __init__(self, name, health, strength, magic):
         """Initialize basic character attributes"""
-        # TODO: Set the character's name, health, strength, and magic
-        # These should be stored as instance variables
-        pass
+        self.name = name
+        self.health = health
+        self.strength = strength
+        self.magic = magic
         
     def attack(self, target):
         """
