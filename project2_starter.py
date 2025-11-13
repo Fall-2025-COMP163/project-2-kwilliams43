@@ -75,7 +75,6 @@ class Character:
         3. Print what happened
         """
         damage = self.strength
-        print(f'{self.name} attacks {target.name} for {damage} damage!')
         target.take_damage(damage)
         
         
@@ -87,7 +86,6 @@ class Character:
         self.health = self.health - damage
         if self.health < 0:
             self.health = 0
-        print(f'{self.name} takes {damage} damage. Health now {self.health}')
         
     def display_stats(self):
         """
@@ -109,7 +107,7 @@ class Player(Character):
         super().__init__(name, health, strength, magic)
         self.character_class = character_class
         self.level = 1
-        self.experience = 0
+        
     
         
         
@@ -118,8 +116,8 @@ class Player(Character):
         Override the parent's display_stats to show additional player info.
         Should show everything the parent shows PLUS player-specific info.
         """
-        super().display_stats()
         print(f'    Class: {self.character_class} | Level: {self.level} | XP: {self.experience}')
+        super().display_stats()
         
 
 class Warrior(Player):
@@ -135,7 +133,7 @@ class Warrior(Player):
         """
         # TODO: Call super().__init__() with warrior-appropriate stats
         # Suggested stats: health=120, strength=15, magic=5
-        super().__init__(name, 'Warrior', health=120, strength=15, magic=5)
+        super().__init__(name, 'Warrior', 120, 15, 5)
                          
         
     def attack(self, target):
@@ -147,7 +145,6 @@ class Warrior(Player):
         # Should do more damage than basic attack
         # Maybe strength + 5 bonus damage?
         damage = self.strength + 5
-        print(f'{self.name} swings a mighty blade for {damage} damage!')
         target.take_damage(damage)
 
         
@@ -158,7 +155,6 @@ class Warrior(Player):
         # TODO: Implement power strike
         # Should do significantly more damage than regular attack
         damage = self.strength + 15
-        print(f'{self.name} usses Power Strike on {target.name} for {damage} damage!')
         target.take_damage(damage)
 
 class Mage(Player):
@@ -174,7 +170,7 @@ class Mage(Player):
         """
         # TODO: Call super().__init__() with mage-appropriate stats
         # Suggested stats: health=80, strength=8, magic=20
-        super().__init__(name, 'Mage', health=80, strength=8, magic=20)
+        super().__init__(name, 'Mage', 80, 8, 20)
         
     def attack(self, target):
         """
@@ -183,8 +179,7 @@ class Mage(Player):
         """
         # TODO: Implement mage attack
         # Should use self.magic for damage calculation instead of strength
-        damage = self.magic
-        print(f'{self.name} casts a magic bolt for {damage} damage!')
+        damage = self.magic // 2
         target.take_damage(damage)
         
     def fireball(self, target):
@@ -194,7 +189,6 @@ class Mage(Player):
         # TODO: Implement fireball spell
         # Should do magic-based damage with bonus
         damage = self.magic + 10
-        print(f'{self.name} launches a Fireball at {target.name} for {damage} damage!')
         target.take_damage(damage)
 
 class Rogue(Player):
@@ -210,7 +204,7 @@ class Rogue(Player):
         """
         # TODO: Call super().__init__() with rogue-appropriate stats
         # Suggested stats: health=90, strength=12, magic=10
-        super().__init__(name, 'Rouge', health=50, strenggth=12, magic=10)
+        super().__init__(name, 'Rouge', 50, 12, 10)
         
     def attack(self, target):
         """
@@ -220,8 +214,7 @@ class Rogue(Player):
         # TODO: Implement rogue attack
         # Could add a chance for critical hit (double damage)
         # Hint: use random.randint(1, 10) and if result <= 3, it's a crit
-        damage = self.strength
-        print(f'{self.name} strikes {target.name} for {damage} damage.')
+        damage = self.strength + 3
         target.take_damage(damage)
         
     def sneak_attack(self, target):
@@ -231,7 +224,6 @@ class Rogue(Player):
         # TODO: Implement sneak attack
         # Should always do critical damage
         damage = self.strength * 2 
-        print(f'{self.name} performs a Sneak Attack of {target.name} for {damage} damage!')
         target.take_damage(damage)
 
 class Weapon:
