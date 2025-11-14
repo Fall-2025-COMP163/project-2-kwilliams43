@@ -161,13 +161,13 @@ if __name__ == "__main__":
     rogue = Rogue("Shadow")
 
     # Display stats
-    print("\n📊 Character Stats:")
+    print("\nCharacter Stats:")
     warrior.display_stats()
     mage.display_stats()
     rogue.display_stats()
 
     # Test polymorphism
-    print("\n⚔️ Polymorphism Test: Different attacks, same method name")
+    print("\nPolymorphism Test: Different attacks, same method name")
     dummy = Character("Training Dummy", 100, 0, 0)
     for char in [warrior, mage, rogue]:
         print(f"\n{char.name} attacks:")
@@ -175,13 +175,13 @@ if __name__ == "__main__":
         dummy.health = 100
 
     # Test special abilities
-    print("\n✨ Special Ability Showcase:")
+    print("\nSpecial Ability Showcase:")
     warrior.power_strike(Character("Goblin", 50, 0, 0))
     mage.fireball(Character("Skeleton", 50, 0, 0))
     rogue.sneak_attack(Character("Bandit", 50, 0, 0))
 
     # Test composition
-    print("\n🗡️ Weapon Composition:")
+    print("\nWeapon Composition:")
     sword = Weapon("Iron Sword", 10)
     staff = Weapon("Arcane Staff", 12)
     dagger = Weapon("Shadow Dagger", 8)
@@ -190,8 +190,8 @@ if __name__ == "__main__":
     dagger.display_info()
 
     # Test battle system
-    print("\n⚔️ Simple Battle Test:")
+    print("\nSimple Battle Test:")
     battle = SimpleBattle(warrior, mage)
     battle.fight()
 
-    print("\n✅ All manual tests complete!")
+    print("\nAll manual tests complete!")
