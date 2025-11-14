@@ -14,3 +14,17 @@ Weapon
 Each class has its own stats like health, strength, and magic. They also have different attack ablilites.
 
 Special Abilities
+Warriors use power strikes
+Mages cast fireballs
+Rouges do sneak attacks
+These moves do extra damage.
+
+Weapon System
+Each weapon has a name and a damage bouns.
+
+Battle Simulator
+Has a battle between 2 characters going through characters starting stats, then their round 1 attacks, finally their final results of the battle.
+
+How to use
+
+When you run the project it will create a warrior, mage, and rouge. It will then show the stats of each, next it test their attacks. Then it will show their special abilites then their weapons. Finally running a battle between 2 characters.
