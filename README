@@ -1,1 +1,16 @@
+Project 2
 
+This project is a small RPG battle system that I made to practice classes and inheritance. It includes different character types, weapons, and a basic simulator. The main goal is to show my understanding of parent classes and child classes and how the work, along with how override methods work.
+
+What The project does
+
+Character System(Classes)
+Character
+Player
+Warrior
+Mage
+Rouge
+Weapon
+Each class has its own stats like health, strength, and magic. They also have different attack ablilites.
+
+Special Abilities
